@@ -32,12 +32,11 @@ class InicioController extends Controller
             : collect();
 
         // Tarjetas extra
-        $eventosActivos   = DB::table('evento')->where('estado_evento', true)->count();
         $totalIncidencias = DB::table('evento_incidencia')->count();
         $boletosVendidos  = DB::table('boleto')->count();
 
         return view('inicio', compact(
-            'eventoTop', 'incidencias', 'eventosActivos', 'totalIncidencias', 'boletosVendidos'
+            'eventoTop', 'incidencias', 'totalIncidencias', 'boletosVendidos'
         ));
     }
 }

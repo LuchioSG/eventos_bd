@@ -23,6 +23,15 @@
         <img src="{{ asset('img/seguridad.jpg') }}" class="rounded-2xl h-56 w-full object-cover shadow">
     </div>
 
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl w-full mx-auto">
+        <a href="{{ route('reportes.eventos') }}" class="bg-sky-700 rounded-2xl p-3 text-center hover:bg-sky-600">
+            <p class="text-white font-semibold">Reporte de eventos</p>
+        </a>
+        <a href="{{ route('reportes.incidencias') }}" class="bg-indigo-700 rounded-2xl p-3 text-center hover:bg-indigo-600">    
+            <p class="text-white font-semibold">Reporte de incidencias</p>
+        </a>
+    </div>
+
     <section class="max-w-4xl w-full mx-auto bg-white rounded-3xl shadow-lg p-8 text-center">
         <p class="text-xl text-slate-500">Evento con más incidencias registradas</p>
         <p class="text-4xl font-bold text-rose-600 mt-2">
@@ -66,12 +75,8 @@
             </table>
         </div>
     </section>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full mx-auto">
-        <div class="bg-white rounded-2xl shadow p-5 text-center">
-            <p class="text-4xl font-bold text-emerald-600">{{ $eventosActivos }}</p>
-            <p class="text-slate-500">Eventos activos</p>
-        </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full mx-auto">
         <div class="bg-white rounded-2xl shadow p-5 text-center">
             <p class="text-4xl font-bold text-amber-600">{{ $totalIncidencias }}</p>
             <p class="text-slate-500">Incidencias totales registradas</p>
