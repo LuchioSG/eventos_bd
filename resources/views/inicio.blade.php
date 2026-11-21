@@ -7,7 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-sky-50 min-h-screen">
-<main class="min-h-screen flex flex-col justify-center gap-10 px-10 py-8">
+@include('partials.nav')
+<main class="min-h-[calc(100vh-4rem)] flex flex-col justify-center gap-10 px-10 py-8">
 
     <h1 class="text-6xl md:text-7xl font-extrabold text-slate-800 text-center leading-tight">
         Sistema de monitoreo de incidencias<br>en eventos sociales

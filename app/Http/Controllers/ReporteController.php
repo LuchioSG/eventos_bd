@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 class ReporteController extends Controller
 {
-    // Reporte 1
+    // Reporte 1: Lista de eventos
     public function eventos()
     {
         $listaEventos = DB:: table('evento')
@@ -15,10 +15,10 @@ class ReporteController extends Controller
         ->get();
 
         return view('reportes.eventos', compact('listaEventos'));
-        
+
     }
 
-    // Reporte 2
+    // Reporte 2 Lista de incidencias
 
     public function incidencias()
     {

@@ -7,15 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-sky-50 min-h-screen">
-    <nav class="bg-white shadow px-8 py-4 flex gap-6 text-lg">
-        <a href="{{ route('inicio') }}" class="font-semibold text-slate-800 hover:text-sky-600">Inicio</a>
-        <a href="{{ route('reportes.eventos') }}" class="text-slate-600 hover:text-sky-600">Reporte de eventos</a>
-        <a href="{{ route('reportes.incidencias') }}" class="text-slate-600 hover:text-sky-600">Reporte de incidencias</a>
-    </nav>
+    @include('partials.nav')
 
     <main class="max-w-6xl mx-auto px-6 py-10">
         <h1 class="text-5xl font-extrabold text-slate-800 text-center mb-10">@yield('titulo')</h1>
+
+         @if (session('exito'))
+            <div class="bg-emerald-100 text-emerald-700 rounded-xl p-4 mb-6">{{ session('exito') }}</div>
+        @endif
+        @if (session('error'))
+            <div class="bg-rose-100 text-rose-700 rounded-xl p-4 mb-6">{{ session('error') }}</div>
+        @endif
+
         @yield('contenido')
     </main>
 </body>
 </html>
+
+    <!--<nav class="bg-white shadow px-8 py-4 flex gap-6 text-lg">
+        <a href="{{ route('inicio') }}" class="font-semibold text-slate-800 hover:text-sky-600">Inicio</a>
+        <a href="{{ route('reportes.eventos') }}" class="text-slate-600 hover:text-sky-600">Reporte de eventos</a>
+        <a href="{{ route('reportes.incidencias') }}" class="text-slate-600 hover:text-sky-600">Reporte de incidencias</a>-->
+    </nav>
